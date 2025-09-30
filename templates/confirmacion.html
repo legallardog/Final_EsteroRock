@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificado Generado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>✅ Certificado Generado</h1>
+    <p>El certificado de <strong>{{ name }}</strong> ha sido generado exitosamente.</p>
+    
+    <p>
+        <a href="{{ url_for('descargar_certificado', filename=filename) }}">📄 Descargar PDF</a>
+    </p>
+    
+    <h2>📱 Escanea este QR para verificar</h2>
+    <img src="data:image/png;base64,{{ qr_base64 }}" alt="QR de verificación" style="width:200px;height:200px;">
+    
+    <p>
+        <a href="{{ url_for('index') }}">⬅️ Volver al formulario</a>
+    </p>
+</body>
+</html>

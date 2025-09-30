@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generar Certificado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Generar Certificado</h1>
+    <form action="/generar" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="name" required><br>
+        <label>Curso:</label>
+        <input type="text" name="course" required><br>
+        <label>Fecha:</label>
+        <input type="date" name="date" required><br>
+        <button type="submit">Generar</button>
+    </form>
+</body>
+</html>

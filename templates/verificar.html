@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Certificado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='verificar.css') }}">
+</head>
+<body>
+    {% if valid %}
+        <h2 class="status ok">✅ Certificado Válido</h2>
+        <div class="card">
+            <p><strong>Nombre:</strong> {{ payload.name }}</p>
+            <p><strong>Curso:</strong> {{ payload.course }}</p>
+            <p><strong>Fecha:</strong> {{ payload.date }}</p>
+            <p><strong>Emitido por:</strong> {{ payload.issuer }}</p>
+        </div>
+    {% else %}
+        <h2 class="status bad">❌ Certificado Inválido</h2>
+        <div class="card">
+            <p>Razón: {{ reason }}</p>
+        </div>
+    {% endif %}
+
+    <div class="actions">
+        <a class="btn" href="{{ url_for('index') }}">⬅️ Volver al formulario</a>
+    </div>
+</body>
+</html>
