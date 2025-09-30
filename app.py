@@ -46,7 +46,7 @@ with open("public.pem", "r") as f:
     PUBLIC_KEY = f.read()
 
 # --- URL pública (variable de entorno para hosting) ---
-PUBLIC_URL = os.environ.get("PUBLIC_URL", "http://localhost:5000")
+PUBLIC_URL = os.environ.get("PUBLIC_URL", "https://Final_EsteroRock.up.railway.app")
 
 # --- Crear PDF con QR ---
 def create_certificate_pdf(name, course, date, link_or_token, output_file):
@@ -131,4 +131,5 @@ def verificar():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
+
     app.run(host="0.0.0.0", port=port, debug=True)
